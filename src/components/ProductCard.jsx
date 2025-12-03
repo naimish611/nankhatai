@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function ProductCard({ product }) {
   const [qty, setQty] = useState("1 KG");
@@ -68,7 +70,16 @@ Delivery Address: (User location not available)
 
   return (
     <div className="card">
-      <img className="product-img" src={product.img} alt={product.name} />
+      {/* <img className="product-img" src={product.img} alt={product.name} /> */}
+
+       <LazyLoadImage
+       className="product-img"
+        alt={product.name}
+        height={300}
+        src={product.img} // image URL
+        effect="blur" // blur effect while loading
+        width="100%"
+      />
 
       <h3>{product.name}</h3>
 
