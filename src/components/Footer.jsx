@@ -17,7 +17,7 @@ export default function Footer() {
     rel="noopener noreferrer"
     style={{ color: "black", textDecoration: "underline" }}
   >
-    Khodal Dham Township, Khalilpur Road, Mahadev Apartment no 405
+    Khodal Dham Township, Khalilpur Road, Mahadev Apartment no 405 , Junagadh
   </a>
 </p>
 

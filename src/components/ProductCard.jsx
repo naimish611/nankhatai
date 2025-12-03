@@ -20,23 +20,51 @@ export default function ProductCard({ product }) {
     }
   };
 
-  const sendToWhatsApp = () => {
-    const phone = "919328271512";
 
-    const message = `
+  // const sendToWhatsApp = () => { const phone = "919328271512"; const message = Hello! I want to order: Product: ${product.name} Quantity: ${qty} Price: ₹${price} // Delivery Address: // Khodal Dham Township, Khalilpur Road, // Mahadev Apartment, Room No. 405 ; window.open(https://wa.me/${phone}?text=${encodeURIComponent(message)}); };
+
+const sendToWhatsApp = () => {
+  const phone = "919328271512";
+
+  if (!navigator.geolocation) {
+    alert("Geolocation is not supported by your browser");
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const { latitude, longitude } = position.coords;
+
+      const message = `
 Hello! I want to order:
 
 Product: ${product.name}
 Quantity: ${qty}
 Price: ₹${price}
 
-// Delivery Address:
-// Khodal Dham Township, Khalilpur Road,
-// Mahadev Apartment, Room No. 405
-    `;
+Delivery Address:
+https://www.google.com/maps?q=${latitude},${longitude}
+      `;
 
-    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
-  };
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
+    },
+    (error) => {
+      alert("Unable to retrieve your location. Please enter manually.");
+      // fallback message without location
+      const message = `
+Hello! I want to order:
+
+Product: ${product.name}
+Quantity: ${qty}
+Price: ₹${price}
+
+Delivery Address: (User location not available)
+      `;
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
+    }
+  );
+};
+
 
   return (
     <div className="card">

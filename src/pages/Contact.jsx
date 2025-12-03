@@ -8,7 +8,7 @@ export default function Contact() {
         <p>
           Khodal Dham Township, Khalilpur Road,
           <br />
-          Mahadev Apartment, Room No. 405
+          Mahadev Apartment, Flat No. 405 , Junagadh
         </p>
 
         <h3>📞 Phone:</h3>
