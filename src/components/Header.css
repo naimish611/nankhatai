@@ -1,6 +1,6 @@
 /* NAVBAR MAIN */
 .navbar {
-  width: 97%; /* 🔥 Slim height */
+  width: auto; /* 🔥 Slim height */
   background: #ffdfb0;
   display: flex;
   justify-content: space-between;
@@ -11,6 +11,10 @@
   z-index: 999;
   height: 40px;        /* 🔥 Very slim navbar height */
 }
+
+
+
+
 
 /* LOGO */
 .logo {

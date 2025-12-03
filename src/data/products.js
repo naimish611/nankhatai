@@ -12,7 +12,8 @@ const products = [
     basePrice: 400,
     img: elchi,
      type: "normal",  
-
+    Desc: "Lightly sweet Elaichi flavored nankhatai",
+     
   },
   {
     id: "n2",
@@ -20,12 +21,16 @@ const products = [
     basePrice: 450,
     img:  chocklate,
       type: "chocolate",  
+       Desc: "Soft chocolate flavored nankhatai",
+     
+
   },
   {
     id: "n3",
     name: "Orange Nankhatai",
     basePrice: 400,
     img: orange,
+     Desc: "Fresh orange scented nankhatai",
     
   },
 ];
