@@ -1,9 +1,10 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;          /* FULL WIDTH */
+  margin: 1;            /* Remove auto center */
+  padding: 1;           /* Remove extra gap */
   text-align: center;
 }
+
 
 .logo {
   height: 6em;
@@ -39,4 +40,105 @@
 
 .read-the-docs {
   color: #888;
+}
+
+body {
+  font-family: Arial;
+  background: #fff6e9;
+  margin: 0;
+}
+
+.navbar {
+  background: #b5651d;
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03); /* Lift up and slightly zoom */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Stronger shadow */
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Smooth image zoom */
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Zoom the image slightly on hover */
+}
+
+.price {
+  font-size: 20px;
+  color: #b5651d;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe57; /* Slightly darker green on hover */
+}
+
+.product-img {
+  width: 100%;
+  height: 300px;      
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.qty-select {
+  width: 100%;
+  max-width: 160px;
+  padding: 8px 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #c8a474;
+  background: #fff5e1;
+  color: #5a3c0c;
+  font-weight: 600;
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .qty-select {
+    max-width: 100%;
+    font-size: 15px;
+    padding: 7px 10px;
+  }
 }

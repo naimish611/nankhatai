@@ -1,0 +1,68 @@
+/* NAVBAR MAIN */
+.navbar {
+  width: 97%; /* 🔥 Slim height */
+  background: #ffdfb0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 40px;        /* 🔥 Very slim navbar height */
+}
+
+/* LOGO */
+.logo {
+  font-size: 18px;     /* smaller for slim look */
+  font-weight: 700;
+  margin-top: 100px;
+  color: white;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #5c2d00;
+  font-weight: 600;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 45px;    /* match slim header */
+    right: 0;
+    background: #ffdfb0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    padding: 15px 0;
+    gap: 15px;
+  }
+
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+}
